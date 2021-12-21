@@ -1,0 +1,8 @@
+prefix=/home/gavin/ROS_ws/multi_turtlebot3_ws/install
+
+Name: viz_trajectory
+Description: Description of viz_trajectory
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

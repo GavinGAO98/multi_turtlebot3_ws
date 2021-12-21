@@ -1,0 +1,8 @@
+prefix=/home/gavin/ROS_ws/multi_turtlebot3_ws/devel
+
+Name: viz_history_trajectory
+Description: Description of viz_history_trajectory
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
