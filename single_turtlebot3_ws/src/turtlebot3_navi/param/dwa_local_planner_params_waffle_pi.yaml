@@ -1,0 +1,61 @@
+DWAPlannerROS:
+
+# Robot Configuration Parameters
+  max_vel_x: 0.26
+  min_vel_x: -0.26
+
+  max_vel_y: 0.0
+  min_vel_y: 0.0
+
+# The velocity when robot is moving in a straight line
+  max_vel_trans:  0.26
+  min_vel_trans:  0.13
+
+  max_vel_theta: 1.82
+  min_vel_theta: 0.9
+
+  acc_lim_x: 2.5
+  acc_lim_y: 0.0
+  acc_lim_theta: 3.2 
+
+# Goal Tolerance Parametes
+  xy_goal_tolerance: 0.05
+  yaw_goal_tolerance: 0.17
+  latch_xy_goal_tolerance: false
+
+# Forward Simulation Parameters
+  # The amount of time to forward-simulate trajectories in seconds(轨迹推演的预测时间)
+  sim_time: 2.0
+  
+  # 探索X速度空间时使用的采样点数
+  vx_samples: 20
+
+  # 探索Y速度空间时使用的采样点数
+  vy_samples: 0
+
+  # 探索Theta速度空间时使用的采样点数
+  vth_samples: 40
+  controller_frequency: 10.0
+
+# Trajectory Scoring Parameters
+  path_distance_bias: 32.0
+  goal_distance_bias: 20.0
+  
+  # The weighting for how much the controller should attempt to avoid obstacles
+  occdist_scale: 0.02
+  forward_point_distance: 0.325
+  
+  # The amount of time that the robot must stop before a collision in order for a trajectory to be considered valid in seconds
+  stop_time_buffer: 0.2
+  
+  # scale what?
+  scaling_speed: 0.25
+  max_scaling_factor: 0.2
+
+# Oscillation Prevention Parameters
+# ? in move_base_params.yaml . which works ?
+  oscillation_reset_dist: 0.05
+
+# Debugging
+  publish_traj_pc : true
+  publish_cost_grid_pc: true

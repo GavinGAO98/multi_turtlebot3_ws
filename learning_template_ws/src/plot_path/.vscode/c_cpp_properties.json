@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/gavin/ROS_ws/Path_plan_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/gavin/ROS_ws/Path_plan_ws/src/communication_modes/include/**",
+        "/home/gavin/ROS_ws/Path_plan_ws/src/launch_learning/include/**",
+        "/home/gavin/ROS_ws/Path_plan_ws/src/param_management/include/**",
+        "/home/gavin/ROS_ws/Path_plan_ws/src/plot_path/include/**",
+        "/home/gavin/ROS_ws/Path_plan_ws/src/service_communication/include/**",
+        "/home/gavin/ROS_ws/Path_plan_ws/src/tf_usage/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

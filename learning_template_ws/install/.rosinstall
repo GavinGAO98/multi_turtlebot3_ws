@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/gavin/ROS_ws/Path_plan_ws/install/setup.sh

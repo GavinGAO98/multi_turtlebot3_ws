@@ -1,0 +1,2 @@
+set(vicon_bridge_MESSAGE_FILES "/home/gavin/ROS_ws/multi_turtlebot3_ws/src/vicon_bridge/msg/Marker.msg;/home/gavin/ROS_ws/multi_turtlebot3_ws/src/vicon_bridge/msg/Markers.msg;/home/gavin/ROS_ws/multi_turtlebot3_ws/src/vicon_bridge/msg/TfDistortInfo.msg")
+set(vicon_bridge_SERVICE_FILES "/home/gavin/ROS_ws/multi_turtlebot3_ws/src/vicon_bridge/srv/viconCalibrateSegment.srv;/home/gavin/ROS_ws/multi_turtlebot3_ws/src/vicon_bridge/srv/viconGrabPose.srv")

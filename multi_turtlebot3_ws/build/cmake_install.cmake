@@ -131,6 +131,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/gavin/ROS_ws/multi_turtlebot3_ws/build/gtest/cmake_install.cmake")
+  include("/home/gavin/ROS_ws/multi_turtlebot3_ws/build/real_multi_navigation/cmake_install.cmake")
+  include("/home/gavin/ROS_ws/multi_turtlebot3_ws/build/vicon_bridge/cmake_install.cmake")
   include("/home/gavin/ROS_ws/multi_turtlebot3_ws/build/viz_history_trajectory/cmake_install.cmake")
   include("/home/gavin/ROS_ws/multi_turtlebot3_ws/build/multi_turtlebot3_navigation/cmake_install.cmake")
 

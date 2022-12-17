@@ -1,0 +1,31 @@
+<!-- $和后面括号之间不能有空格 -->
+<launch>
+
+    <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+    <arg name = "configuration_basename" default="turtlebot3_lds_2d.lua" />
+
+    <arg name = "set_base_frame" value = "base_footprint"/>
+    <arg name = "set_map_frame" value = "map" />
+    <arg name = "set_odom_frame" value = "odom" />
+
+    <!-- turtlebot3-bringup -->
+    <include file = "$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
+        <arg name = "model" value = "$(arg model)" />
+    </include>
+
+    <!-- hector-slam -->
+    <node pkg = "hector_mapping" type = "hector_mapping" name = "hector_mapping" output = "screen">
+        
+        <!-- Frame names  -->
+        <param name = "base_frame"  value = "$(arg set_base_frame)" />
+        <param name = "map_frame" value = "$(arg set_map_frame)" />
+        <param name = "odom_frame" value = "$(arg set_odom_frame)" />
+
+        <rosparam command = "load"  file = "$(find slam_map)/config/hector_params.yaml"/>
+    </node>
+
+    <!-- rviz  -->
+    <!--<node pkg = "rviz"  type = "rviz" name = "rviz" required = "true"
+         args = " -d $(find slam_map)/rviz/turtlebot3_hector.rviz" />-->
+
+</launch>

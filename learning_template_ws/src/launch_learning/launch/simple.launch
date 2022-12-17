@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="communication_modes" type="velocity_publisher" name="publisher" output="screen" />
+    <node pkg="communication_modes" type="pose_subscriber" name="subscriber" output="screen" /> 
+</launch>
+
+

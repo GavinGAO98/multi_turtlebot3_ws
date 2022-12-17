@@ -1,0 +1,8 @@
+prefix=/home/gavin/ROS_ws/learning_template_ws/devel
+
+Name: param_management
+Description: Description of param_management
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

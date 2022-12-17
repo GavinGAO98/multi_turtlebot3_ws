@@ -1,0 +1,29 @@
+<launch>
+    <!--启动turtle  -->
+    <node pkg = "turtlesim" type = "turtlesim_node" name = "turtle1">
+        <!-- 对海龟的话题重映射，否则发布的速度没有对应话题 -->
+        <!-- <remap from = "/turtle1/cmd_vel" to = "/cmd_vel" /> -->
+    </node>
+
+    <!--发布turtle2的坐标系  -->
+    <node pkg = "tf_odom" type = "add_turtle2_frame" name = "add_turtle2_frame"/>
+
+    <!-- 不能再运行节点turtlesim_node，这样会在新界面中产生第二个海龟 -->
+     <!-- <node pkg = "turtlesim" type = "turtlesim_node" name = "turtle2" ns = "too"/> -->
+
+    <!-- 发布速度 -->
+    <node pkg = "tf_odom" type =  "vel_publisher" name = "vel_publisher" output="screen">
+        <remap from = "/cmd_vel" to = "/turtle1/cmd_vel" />
+    </node>
+
+    <!-- 发布tf -->
+    <node pkg = "tf_odom" type = "template_pub_tf.py" name = "tf_pub" output = "screen" >
+        <remap from = "pose" to = "/turtle1/pose" />
+    </node>
+
+    <!-- 订阅tf -->
+    <node pkg = "tf_odom" type = "tf_subscr" name = "tf_subscr" output = "screen" >
+        <remap from = "/cmd_vel" to = "/turtle2/cmd_vel" />
+    </node>
+
+</launch>

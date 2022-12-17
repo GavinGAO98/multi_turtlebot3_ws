@@ -5,5 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("real_multi_navigation")
+subdirs("vicon_bridge")
 subdirs("viz_history_trajectory")
 subdirs("multi_turtlebot3_navigation")

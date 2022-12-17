@@ -1,0 +1,8 @@
+prefix=/home/gavin/ROS_ws/learning_template_ws/install
+
+Name: launch_learning
+Description: Description of launch_learning
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

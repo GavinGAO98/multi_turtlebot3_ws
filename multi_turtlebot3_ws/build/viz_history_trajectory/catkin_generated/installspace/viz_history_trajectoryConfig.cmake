@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/gavin/ROS_ws/multi_turtlebot3_ws/install/lib;/home/gavin/ROS_ws/multi_turtlebot3_ws/devel/lib;/home/gavin/ROS_ws/turtlebot3_opens_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/gavin/ROS_ws/multi_turtlebot3_ws/install/lib;/home/gavin/ROS_ws/catkin_manage_overlay_ws/devel/lib;/home/gavin/ROS_ws/learning_basic_ws/devel/lib;/opt/ros/melodic/lib;/home/gavin/ROS_ws/turtlebot3_opens_ws/devel/lib;/home/gavin/ROS_ws/multi_mapping_ws/devel/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

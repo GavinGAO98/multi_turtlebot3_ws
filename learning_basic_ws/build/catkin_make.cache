@@ -1,0 +1,2 @@
+slam_map:tf_odom
+-DCATKIN_DEVEL_PREFIX=/home/gavin/ROS_ws/learning_basic_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gavin/ROS_ws/learning_basic_ws/install -G Unix Makefiles

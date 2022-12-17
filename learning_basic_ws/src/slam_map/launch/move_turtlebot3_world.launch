@@ -1,0 +1,37 @@
+<!-- $和后面括号之间不能有空格 -->
+
+<launch>
+ 
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="x_pos" default="-2.0"/>
+  <arg name="y_pos" default="-0.5"/>
+  <arg name="z_pos" default="0.0"/>
+   <arg name = "configuration_basename" default="turtlebot3_lds_2d.lua" />
+   <arg name="open_rviz" default="true" />
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find slam_map)/world/clean_room.world"/><!--  Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable --> -->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- rviz通过参数robo_description获得机器人模型 -->
+  <!-- 加载模型后发布/base_link坐标系和相机-->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+
+
+   <!-- 下面这条语句也不需要，因为clean_room.world 里已经加载turtlebot3了；但是重复运行的同名节点只会顶掉上一个同名节点-->
+   <!-- Gazebo model spawner  在gazebo中加载机器人模型！！！-->
+  <!-- <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"  args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" /> -->
+   
+   <!-- 一定要启动turtlebot的bringup节点，才能打开雷达，发送机器人自身多个坐标系的tf变换 ；
+   一般自带的navigation包中已有发布tf的节点-turtlebot3_remote.launch，重复写会覆盖原工作空间的同名功能包，里面依赖的tf变化就都失效了-->
+   <!-- 通过tf发布从机器人描述到关节位置的正运动学解 -->
+   <!-- <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
+    <arg name="model" value="$(arg model)" />
+  </include> -->
+  </launch>

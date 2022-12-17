@@ -1,0 +1,2 @@
+plot_trajectory
+-DCATKIN_DEVEL_PREFIX=/home/gavin/ROS_ws/single_turtlebot3_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gavin/ROS_ws/single_turtlebot3_ws/install -G Unix Makefiles

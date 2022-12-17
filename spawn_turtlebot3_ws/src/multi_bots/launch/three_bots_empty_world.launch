@@ -1,0 +1,51 @@
+<launch>
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  
+  <arg name="model1" default ="tb1"/>
+  <arg name="pos_x1" default="2.0"/>
+  <arg name="pos_y1" default="0.0"/>
+  <arg name="pos_z1" default="0.0"/>
+
+  <arg name="model2" default ="tb2"/>
+  <arg name="pos_x2" default="-2.0"/>
+  <arg name="pos_y2" default="0.0"/>
+  <arg name="pos_z2" default="0.0"/>
+  
+  <arg name="model3" default ="tb3"/>
+  <arg name="pos_x3" default="0.0"/>
+  <arg name="pos_y3" default="3.4"/>
+  <arg name="pos_z3" default="0.0"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!--向include的launch文件中赋值  -->
+    <!-- 在该例子中，第一个参数名字通常是指被包含文件中的参数，第二个参数名是指当前文件中的参数。
+    这样做之后，给定参数在两个启动文件中有相同的值 -->
+    <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/empty.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- 为多个节点批量添加命名空间 可以加载多个turtlebot3-->
+  <group ns = "/tb1">
+    <!-- Loads robot_description to parameter server from URDF file-->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"  args="-urdf -model turtlebot3_$(arg model1) -x $(arg pos_x1) -y $(arg pos_y1) -z $(arg pos_z1) -param robot_description" />
+  </group>
+
+
+  <group ns = "/tb2">
+   <param name = "robot_description" command = "$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" /> 
+    <node pkg = "gazebo_ros" type = "spawn_model" name = "spawn_urdf"  args="-urdf -model turtlebot3_$(arg model2) -x $(arg pos_x2) -y $(arg pos_y2) -z $(arg pos_z2) -param robot_description" />
+
+  </group>
+
+  <group ns = "/tb3">
+    <param name = "robot_description" command = "$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+    <node pkg = "gazebo_ros" type = "spawn_model" name = "spawn_urdf"  args="-urdf -model turtlebot3_$(arg model3) -x $(arg pos_x3) -y $(arg pos_y3) -z $(arg pos_z3) -param robot_description" />
+
+  </group>
+
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/gavin/ROS_ws/multi_turtlebot3_ws/install
+
+Name: real_multi_navigation
+Description: Description of real_multi_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

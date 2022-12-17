@@ -1,0 +1,8 @@
+prefix=/home/gavin/ROS_ws/spawn_turtlebot3_ws/install
+
+Name: multi_bots
+Description: Description of multi_bots
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

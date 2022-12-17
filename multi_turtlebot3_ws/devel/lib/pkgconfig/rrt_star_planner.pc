@@ -1,0 +1,8 @@
+prefix=/home/gavin/ROS_ws/multi_turtlebot3_ws/devel
+
+Name: rrt_star_planner
+Description: Description of rrt_star_planner
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

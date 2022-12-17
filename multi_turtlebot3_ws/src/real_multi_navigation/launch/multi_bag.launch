@@ -1,0 +1,17 @@
+<?xml version = "1.0"?>
+<launch>
+
+  <node pkg="rosbag" type="record" name="record_0_vel" args="/tb3_0/cmd_vel /tb3_1/cmd_vel /tb3_2/cmd_vel -o /home/gavin/bag_files/cmd_vel.bag"/>
+  <!-- 注意这里bag文件的路径必须为绝对路径-->   
+
+<!--  <node pkg="rosbag" type="record" name="record_1_vel" args="record -o /tb3_1/cmd_vel /home/gavin/bag_files/bot1_cmd_vel.bag"/> -->
+
+<!--  <node pkg="rosbag" type="record" name="record_2_vel" args="record -o /tb3_2/cmd_vel /tb3_2/cmd_vel /home/gavin/bag_files/bot2_cmd_vel.bag"/> -->
+
+  <node pkg="rosbag" type="record" name="record_0_pose" args="/vicon/bot1/bot1 /vicon/bot2/bot2 /vicon/bot3/bot3 -o /home/gavin/bag_files/vicon.bag"/>
+
+<!--  <node pkg="rosbag" type="record" name="record_1_pose" args="record -o /vicon/bot2/bot2 /home/gavin/bag_files/bot1_vicon.bag"/> -->
+
+<!--  <node pkg="rosbag" type="record" name="record_2_pose" args="record -o /vicon/bot3/bot3 /home/gavin/bag_files/bot2_vicon.bag"/> -->
+ 
+</launch>

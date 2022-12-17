@@ -1,0 +1,8 @@
+prefix=/home/gavin/ROS_ws/multi_mapping_ws/install
+
+Name: real_merge
+Description: Description of real_merge
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

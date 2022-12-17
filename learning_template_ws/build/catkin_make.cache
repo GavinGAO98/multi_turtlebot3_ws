@@ -1,0 +1,2 @@
+communication_modes:launch_learning:param_management:plot_path:service_communication:tf_usage
+-DCATKIN_DEVEL_PREFIX=/home/gavin/ROS_ws/learning_template_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gavin/ROS_ws/learning_template_ws/install -G Unix Makefiles

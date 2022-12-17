@@ -1,0 +1,5 @@
+<launch>
+  <node pkg = "rviz" type = "rviz" name = "rviz" required = "true" args = "-d ~/ROS_ws/carto_ws/cartographer_ros/cartographer_ros/rviz/turtlebot3_carto.rviz"/>
+
+	
+</launch>

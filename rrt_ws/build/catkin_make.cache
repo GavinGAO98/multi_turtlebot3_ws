@@ -1,0 +1,2 @@
+rrt_star_global_planner
+-DCATKIN_DEVEL_PREFIX=/home/gavin/ROS_ws/rrt_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gavin/ROS_ws/rrt_ws/install -G Unix Makefiles

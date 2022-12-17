@@ -1,0 +1,19 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/opt/ros/melodic/include/**",
+        "/home/gavin/ROS_ws/multi_turtlebot3_ws/src/multi_bots/include/**",
+        "/home/gavin/ROS_ws/turtlebot3_demo_ws/src/turtlebot3_fake/include/**",
+        "/home/gavin/ROS_ws/turtlebot3_demo_ws/src/turtlebot3_gazebo/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

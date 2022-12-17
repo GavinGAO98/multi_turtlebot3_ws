@@ -1,0 +1,2 @@
+map_merge:real_merge
+-DCATKIN_DEVEL_PREFIX=/home/gavin/ROS_ws/multi_mapping_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gavin/ROS_ws/multi_mapping_ws/install -G Unix Makefiles

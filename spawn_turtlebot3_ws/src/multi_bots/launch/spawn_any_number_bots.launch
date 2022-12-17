@@ -1,0 +1,48 @@
+<launch>
+    <arg name = "model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]" />
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_house.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <!-- start gazebo gui -->
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include> 
+
+  <!-- No namespace here as we will share this description. 
+       Access with slash at the beginning -->
+ <param name="robot_description" 
+        command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+
+  <!-- BEGIN ROBOT 1-->
+  <group ns="tb1">
+    <param name="tf_prefix" value="tb1_tf" />
+    <include file="$(find multi_bots)/launch/spawn_a_turtlebot3.launch" >
+      <arg name="init_pose" value="-x 2 -y 0 -z 0" />
+      <arg name="robot_name"  value="tb1" />
+    </include>
+  </group>
+
+  <!-- BEGIN ROBOT 2-->
+  <group ns="tb2">
+    <param name="tf_prefix" value="rtb2_tf" />
+    <include file="$(find multi_bots)/launch/spawn_a_turtlebot3.launch" >
+      <arg name="init_pose" value="-x -2 -y 0 -z 0" />
+      <arg name="robot_name"  value="tb2" />
+    </include>
+  </group>
+
+ <!-- BEGIN ROBOT 3-->
+  <group ns="tb3">
+    <param name="tf_prefix" value="rtb3_tf" />
+    <include file="$(find multi_bots)/launch/spawn_a_turtlebot3.launch" >
+      <arg name="init_pose" value="-x 0 -y 3.4 -z 0" />
+      <arg name="robot_name"  value="tb3" />
+    </include>
+  </group>
+
+
+</launch>
+<!-- References:https://www.theconstructsim.com/ros-qa-130-how-to-launch-multiple-robots-in-gazebo-simulator/ -->

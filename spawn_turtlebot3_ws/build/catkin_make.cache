@@ -1,0 +1,2 @@
+multi_bots
+-DCATKIN_DEVEL_PREFIX=/home/gavin/ROS_ws/spawn_turtlebot3_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gavin/ROS_ws/spawn_turtlebot3_ws/install -G Unix Makefiles

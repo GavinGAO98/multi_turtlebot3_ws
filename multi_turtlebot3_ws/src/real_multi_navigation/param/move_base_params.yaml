@@ -1,0 +1,43 @@
+# References:https://wiki.ros.org/move_base
+
+
+# 指定move_base的(自定义)全局规划器插件
+# ~base_global_planner (string, default: "navfn/NavfnROS" For 1.1+ series)
+# base_global_planner: "navfn/NavfnROS"
+
+# 指定move_base的(自定义)局部规划器插件
+# ~base_local_planner (string, default: "base_local_planner/TrajectoryPlannerROS" For 1.1+ series)
+# base_local_planner: "dwa_local_planner/DWAPlannerROS"
+
+# 指定自定义recovery插件（只有这一步才有用）
+recovery_behaviors:
+   - name: 'stepback_and_steerturn_recovery'
+     type: 'stepback_and_steerturn_recovery::StepBackAndSteerTurnRecovery'
+
+# whether to shutdown costmaps move_base node is inactive
+shutdown_costmaps: false
+
+# rate of publishing topic 'cmd_vel' to base
+controller_frequency: 10.0
+
+# How long the planner will wait in seconds in an attempt to find a valid plan before space-clearing operations are performed.
+planner_patience: 5.0
+
+# How long the controller will wait in seconds without receiving a valid control before space-clearing operations are performed
+controller_patience: 15.0
+
+# The distance away from the robot in meters beyond which obstacles will be cleared from the costmap when attempting to clear space in the map. Note, this parameter is only used when the default recovery behaviors are used for move_base.
+conservative_reset_dist: 3.0
+
+# The rate in Hz at which to run the global planning loop. If the frequency is set to 0.0, the global planner will only run when a new goal is received or the local planner reports that its path is blocked. New in navigation 1.6.0
+planner_frequency: 5.0
+
+# How long in seconds to allow for oscillation before executing recovery behaviors. A value of 0.0 corresponds to an infinite timeout. New in navigation 1.3.1
+# 震荡后等多久开始恢复动作
+oscillation_timeout: 10.0 默认
+# oscillation_timeout: 0.01 #测试恢复行为
+
+# How far in meters the robot must move to be considered not to be oscillating. Moving this far resets the timer counting up to the ~oscillation_timeout New in navigation 1.3.1
+# (震荡后后退多少米)
+oscillation_distance: 0.2
+

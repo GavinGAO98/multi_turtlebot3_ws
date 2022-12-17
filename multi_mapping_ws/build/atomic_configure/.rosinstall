@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/gavin/ROS_ws/multi_mapping_ws/devel/setup.sh

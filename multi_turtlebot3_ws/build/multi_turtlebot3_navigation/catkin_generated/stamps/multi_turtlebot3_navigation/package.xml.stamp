@@ -54,6 +54,9 @@
   <build_depend>base_local_planner</build_depend>
   <build_depend>std_msgs</build_depend>
   <build_depend>roscpp</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>eigen</build_depend>
+  <build_depend>cmake_modules</build_depend>
   <build_export_depend>geometry_msgs</build_export_depend>
   <build_export_depend>nav_msgs</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>
@@ -69,5 +72,10 @@
 
 
   <!-- The export tag contains other, unspecified, tags -->
-  
+    <export>
+    <!-- Other tools can request additional information be placed here -->
+    <nav_core plugin="${prefix}/rrt_star_planner_plugin.xml"/>
+    <nav_core plugin="${prefix}/sequential_recovery_plugin.xml" />
+  </export>
+
 </package>

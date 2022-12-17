@@ -1,0 +1,2 @@
+turtlebot3_fake:turtlebot3_gazebo:turtlebot3_simulations
+-DCATKIN_DEVEL_PREFIX=/home/gavin/ROS_ws/turtlebot3_opens_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gavin/ROS_ws/turtlebot3_opens_ws/install -G Unix Makefiles

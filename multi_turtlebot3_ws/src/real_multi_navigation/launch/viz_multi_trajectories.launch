@@ -1,0 +1,24 @@
+<?xml version = "1.0"?>
+<launch>
+
+    <arg name = "robot1_ns" value="/tb3_0" />
+    <arg name = "robot2_ns" value="/tb3_1"/> 
+    <arg name = "robot3_ns" value="/tb3_2"/> 
+
+
+    <group ns="$(arg robot1_ns)">
+    <!-- <node pkg = "$(find viz_history_trajectory)" type = "viz_trajectory" name = "viz_trajectory"/> --> <!-- 不能用find，find返回的是功能包的路径，只能在当前的目录下找功能包-->
+        <node pkg = "viz_history_trajectory" type = "viz_trajectory" name = "viz_trajectory"/>
+
+    </group>
+
+    <group ns="$(arg robot2_ns)">
+        <node pkg = "viz_history_trajectory" type = "viz_trajectory" name = "viz_trajectory"/>
+
+    </group>
+
+    <group ns = "$(arg robot3_ns)">
+        <node pkg = "viz_history_trajectory" type = "viz_trajectory" name = "viz_trajectory"/>
+
+    </group>
+</launch>

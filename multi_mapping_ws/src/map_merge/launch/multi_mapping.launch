@@ -1,0 +1,51 @@
+<launch>
+
+<arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+
+<arg name="first_tb3"  default="tb3_0"/>
+<arg name="second_tb3" default="tb3_1"/>
+<arg name="third_tb3"  default="tb3_2"/>
+
+<arg name = "configuration_basename" default="turtlebot3_lds_2d.lua" />
+<arg name="set_base_frame" default="base_link" />
+<arg name = "set_odom_frame" default="odom"/>
+<arg name = "set_map_frame" default="map"/>
+
+<group ns="$(arg first_tb3)">
+     <!-- Gmapping-->
+    <node pkg = "gmapping" type = "slam_gmapping" name = "turtlebot3_gmapping" >
+        <param name = "base_frame" value = "tb3_0/$(arg set_base_frame)" /> <!--设置gmapping参数-->
+        <param name = "odom_frame" value = "tb3_0/$(arg set_odom_frame)" />
+        <param name = "map_frame" value = "tb3_0/$(arg set_map_frame)" />
+        <rosparam command = 'load'  file = "$(find slam_map)/config/gmapping_params.yaml" />
+    </node>
+
+</group>
+
+<group ns="$(arg second_tb3)">
+     <!-- Gmapping-->
+    <node pkg = "gmapping" type = "slam_gmapping" name = "turtlebot3_gmapping" >
+        <param name = "base_frame" value = "tb3_1/$(arg set_base_frame)" /> <!--设置gmapping参数-->
+        <param name = "odom_frame" value = "tb3_1/$(arg set_odom_frame)" />
+        <param name = "map_frame" value = "tb3_1/$(arg set_map_frame)" />
+        <rosparam command = 'load'  file = "$(find slam_map)/config/gmapping_params.yaml" />
+    </node>
+
+</group>
+
+<group ns="$(arg third_tb3)">
+     <!-- Gmapping-->
+    <node pkg = "gmapping" type = "slam_gmapping" name = "turtlebot3_gmapping" >
+        <param name = "base_frame" value = "tb3_2/$(arg set_base_frame)" /> <!--设置gmapping参数-->
+        <param name = "odom_frame" value = "tb3_2/$(arg set_odom_frame)" />
+        <param name = "map_frame" value = "tb3_2/$(arg set_map_frame)" />
+        <rosparam command = 'load'  file = "$(find slam_map)/config/gmapping_params.yaml" />
+    </node>
+
+</group>
+
+<!--启动rviz-->
+<node pkg="rviz" type="rviz" name="rviz" args="-d $(find map_merge)/rviz/separate_maps.rviz" /> 
+
+
+</launch>

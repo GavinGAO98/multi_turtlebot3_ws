@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/gavin/ROS_ws/multi_turtlebot3_ws/devel;/home/gavin/ROS_ws/turtlebot3_opens_ws/devel;/opt/ros/melodic'.split(';')
+            CMAKE_PREFIX_PATH = r'/home/gavin/ROS_ws/catkin_manage_overlay_ws/devel;/home/gavin/ROS_ws/learning_basic_ws/devel;/opt/ros/melodic;/home/gavin/ROS_ws/turtlebot3_opens_ws/devel;/home/gavin/ROS_ws/multi_mapping_ws/devel'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

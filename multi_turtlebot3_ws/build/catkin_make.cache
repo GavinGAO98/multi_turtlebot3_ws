@@ -1,2 +1,2 @@
-multi_turtlebot3_navigation:viz_history_trajectory
+multi_turtlebot3_navigation:real_multi_navigation:vicon_bridge:viz_history_trajectory
 -DCATKIN_DEVEL_PREFIX=/home/gavin/ROS_ws/multi_turtlebot3_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gavin/ROS_ws/multi_turtlebot3_ws/install -G Unix Makefiles

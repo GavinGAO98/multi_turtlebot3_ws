@@ -7,8 +7,13 @@
       },
       "includePath": [
         "/opt/ros/melodic/include/**",
-        "/home/gavin/ROS_ws/turtlebot3_demo_ws/src/turtlebot3_fake/include/**",
-        "/home/gavin/ROS_ws/turtlebot3_demo_ws/src/turtlebot3_gazebo/include/**",
+        "/home/gavin/ROS_ws/multi_mapping_ws/src/map_merge/include/**",
+        "/home/gavin/ROS_ws/multi_turtlebot3_ws/src/multi_turtlebot3_navigation/include/**",
+        "/home/gavin/ROS_ws/learning_basic_ws/src/slam_map/include/**",
+        "/home/gavin/ROS_ws/learning_basic_ws/src/tf_odom/include/**",
+        "/home/gavin/ROS_ws/turtlebot3_opens_ws/src/turtlebot3_fake/include/**",
+        "/home/gavin/ROS_ws/turtlebot3_opens_ws/src/turtlebot3_gazebo/include/**",
+        "/home/gavin/ROS_ws/multi_turtlebot3_ws/src/viz_history_trajectory/include/**",
         "/usr/include/**"
       ],
       "name": "ROS"

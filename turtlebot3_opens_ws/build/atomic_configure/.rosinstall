@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/gavin/ROS_ws/turtlebot3_opens_ws/devel/setup.sh

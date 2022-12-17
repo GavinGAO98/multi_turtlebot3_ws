@@ -1,0 +1,8 @@
+prefix=/home/gavin/ROS_ws/learning_basic_ws/devel
+
+Name: tf_odom
+Description: Description of tf_odom
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
